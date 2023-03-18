@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { postMessage } from "./src/routes/MessageRoute.js";
+import { postMessage } from "./src/routes/messageRoutes/postMessage.route.js";
+import { getPosts } from "./src/routes/messageRoutes/getPosts.route.js";
 
 dotenv.config();
 const app = express();
@@ -32,11 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const server = app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
-
-app.get("/", (req, res) => {
-  res.status(200).send("request check");
-});
-
+app.use(express.json());
+app.use(cors());
 app.use("/", postMessage);
-
+app.use("/", getPosts);
 export default server;
