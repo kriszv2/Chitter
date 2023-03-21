@@ -1,11 +1,12 @@
 import React from 'react'
-import "./NewsPage.css"
+import "./Home.css"
 import PostOnWall from './PostOnWall/PostOnWall'
 
-export default function NewsPage(props) {
+export default function Home(props) {
 
   console.log(props.posts)
-  const posts = props.posts.map((post) => {
+  //reversing the order of the array then mapping it
+  const posts = props.posts.slice(0).reverse().map((post) => {
 
     const { _id, message,createdAt } = post;
     let formatTime = new Date(createdAt);

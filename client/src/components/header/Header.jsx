@@ -8,6 +8,7 @@ export default function Header() {
       <a href='/'>Notifications</a>
       <a href='/'>Messages</a>
       <a href='/'>Explore</a>
+      <a href='/register'>Register</a>
     </header>
   )
 }

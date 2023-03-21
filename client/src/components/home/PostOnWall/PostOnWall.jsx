@@ -2,25 +2,15 @@ import React, {  useState } from 'react'
 import "./PostOnWall.css"
 import axios from "axios"
 
-export default function PostOnWall(props) {
+export default function PostOnWall() {
   const [postContent, setPostContent] = useState(``)
-  const [postsOnWall, setPostsOnWall] = useState([])
 
   
   const handleSubmit = event => {
     event.preventDefault();
     axios.post("http://localhost:4000", { message : postContent })
-      .then((response) => {
-        console.log("Success:", response.data);
-        
-        // handle successful response from server
-        
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        // handle error
-      });
-
+      
+window.location.reload();
   }
   const changeHandler = (event) => {
     setPostContent(event.target.value)
