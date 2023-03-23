@@ -1,10 +1,14 @@
 import React from 'react'
 import "./Home.css"
 import PostOnWall from './PostOnWall/PostOnWall'
+import Cookies from "universal-cookie";
+
 
 export default function Home(props) {
 
-  console.log(props.posts)
+  const cookies = new Cookies();
+  const token = cookies.get("TOKEN")
+
   //reversing the order of the array then mapping it
   const posts = props.posts.slice(0).reverse().map((post) => {
 
@@ -17,14 +21,22 @@ export default function Home(props) {
     </article>
     )
   })
-  return (
+  const logout = () => {
+    cookies.remove("TOKEN", { path: "/" });
+    window.location.href = "/";
+  }
+  if (token) {
+    return (
     <>
         <main>
         <div className='div-container'>
             {posts}
           <PostOnWall posts={ posts} />
               </div> 
-        </main>    
+        </main>
+        <button onClick={logout}>Logout</button>
     </>
   )
+  }
+  
 }

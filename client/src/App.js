@@ -10,7 +10,7 @@ import Register from "./components/register/Register";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [user, setUser] = useState({});
+
   useEffect(() => {
     const fetchPosts = async () => {
       const postData = await getPosts();
@@ -21,22 +21,14 @@ function App() {
     };
     fetchPosts();
   }, []);
-  console.log(posts);
+
   return (
     <>
       <Router>
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              user && user.id ? (
-                <Home user={user} setUser={setUser} />
-              ) : (
-                <Login setUser={setUser} />
-              )
-            }
-          />
+          <Route path="/home" element={<Home posts={posts} />} />
+          <Route path="/" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>
       </Router>

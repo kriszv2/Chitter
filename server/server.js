@@ -41,4 +41,5 @@ app.use("/", postMessage);
 app.use("/", getPosts);
 app.use("/register", registerUser);
 app.use("/login", loginUser);
+
 export default server;

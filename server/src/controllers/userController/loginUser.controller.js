@@ -3,38 +3,41 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const loginUser = async (req, res) => {
-  const { username, password } = req.body;
-
-  User.findOne({ username: username })
+  User.findOne({ username: req.body.username })
     .then((user) => {
       bcrypt
-        .compare(password, user.password)
-        .then(() => {
-          const token = jwt.sign(
-            {
-              username: user.username,
-              userEmail: user.email,
-            },
-            "PWD-TOKEN",
-            { expiresIn: "24h" }
-          );
-          res.status(200).send({
-            message: "Login Successful",
-            email: user.email,
-            token,
-          });
+        .compare(req.body.password, user.password)
+        .then((isMatch) => {
+          if (isMatch) {
+            const token = jwt.sign(
+              {
+                username: user.username,
+                email: user.email,
+              },
+              "PWD-TOKEN",
+              { expiresIn: "24h" }
+            );
+            res.status(200).send({
+              message: "Login Successful",
+              email: user.email,
+              token,
+            });
+          } else {
+            res.status(400).send({
+              message: "Password doesn't match",
+            });
+          }
         })
         .catch((e) => {
           res.status(400).send({
-            message: "password doesn't match",
+            message: "Error comparing passwords",
             e,
           });
         });
-      console.log("login successful");
     })
     .catch((e) => {
       res.status(404).send({
-        message: "username not found",
+        message: "Username not found",
         e,
       });
     });
