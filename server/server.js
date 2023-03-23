@@ -5,6 +5,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { postMessage } from "./src/routes/messageRoutes/postMessage.route.js";
 import { getPosts } from "./src/routes/messageRoutes/getPosts.route.js";
+import { registerUser } from "./src/routes/userRoutes/registerUser.route.js";
+import { loginUser } from "./src/routes/userRoutes/loginUser.route.js";
 
 dotenv.config();
 const app = express();
@@ -37,4 +39,6 @@ app.use(express.json());
 app.use(cors());
 app.use("/", postMessage);
 app.use("/", getPosts);
+app.use("/register", registerUser);
+app.use("/login", loginUser);
 export default server;
