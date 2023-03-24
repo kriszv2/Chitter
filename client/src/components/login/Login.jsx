@@ -32,9 +32,10 @@ export default function Login() {
           path: "/",
           
         });
-        console.log(res.data.token)
+        
         window.location.href = "/home";
       }).catch((e) => {
+        alert("Wrong credentials")
         e = new Error();
       })
       }
@@ -47,12 +48,13 @@ export default function Login() {
           <Link to="/register">Register</Link>
         </div>
         <div className='right-div'>
+          <h1>Welcome to Chitter <img className='header-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png'/></h1>
           <h2>Login</h2>
          <form className='login-form' onSubmit={login}>
              
-            <input placeholder="Username..." type="text" name="username" value={user.username} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Username..." type="text" name="username" value={user.username} onChange={changeHandler}/>
           
-            <input placeholder="Password..." type="password" name="password" value={user.password} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Password..." type="password" name="password" value={user.password} onChange={changeHandler}/>
           
               <input type="submit" value="Login" />
         </form> 

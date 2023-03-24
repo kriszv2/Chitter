@@ -15,30 +15,34 @@ export default function Home(props) {
 
     const { _id, message,createdAt } = post;
     let formatTime = new Date(createdAt);
+
     return (
+
       <article key={_id} className='headlines-article'>
         <p>{message}</p>
         <time>{ formatTime.toLocaleString() }</time>
-    </article>
+      </article>
+      
     )
   })
+
   const logout = () => {
     cookies.remove("TOKEN", { path: "/" });
     window.location.href = "/";
   }
+  
   if (token) {
     return (
       <>
-        <header>
-      <Link className='home-button' to="/home">Home</Link>
-    </header>
+
         <main>
-        <div className='div-container'>
+          <button className='logout-btn' onClick={logout}>Logout</button>
+        <div className='peeps-container'>
             {posts}
           <PostOnWall posts={ posts} />
               </div> 
         </main>
-        <button onClick={logout}>Logout</button>
+        
     </>
   )
   }
