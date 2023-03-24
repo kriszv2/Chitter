@@ -1,0 +1,97 @@
+body{
+    background-color: rgb(215, 228, 230);
+}
+.div-container{
+    margin-top:100px;
+    background-color: rgba(139, 255, 139, 0.384);
+    display: flex;
+    max-width:80%;
+    height:80vh;
+    border-radius: 20px;
+}
+
+.left-div{
+    color: white;
+    width:45%;
+    float:left;
+    text-align: center;
+    margin: auto 0;
+    height:100%;
+    align-items: center;
+    display: grid; 
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+    background-size: cover;
+    background-position: center;
+}
+@media only screen and (max-width: 1040px) {
+    #root{
+        text-align: center;
+        margin: 0;
+    }
+    .div-container {
+        display: inline-grid;
+        max-width: 100%;
+    }
+
+    .left-div {
+        width: 100%;
+    }
+}
+.right-div{
+    margin:auto;
+}
+.login-form>*{
+    margin:30px;
+}
+.right-div>h2{
+    text-align: center;
+    color:rgb(59, 59, 59);
+    font-weight: 700;
+}
+.left-div>h2{
+    margin-top:30px;
+}
+.left-div>a{
+    color: white;
+    text-decoration: none;
+    width:350px;
+    margin: 0 auto;
+    font-size: 2em;
+    background-color: transparent;
+    border:1px solid white;
+    border-radius: 100px;
+}
+.left-div>a:hover{
+    color: rgba(27, 27, 27, 0.849);
+    background-color:rgba(56, 172, 250, 0.37)
+}
+.login-form{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width:500px;
+    
+    
+}
+input{
+    align-items: center;
+    color:whitesmoke;
+    font-weight: 700;
+    margin-left:30px;
+    padding:10px;
+    background-color: rgb(54, 109, 109);
+    border-radius: 10px;
+    border:1px solid rgba(58, 220, 248, 0.247);
+}
+form>input[type=submit]{
+    color:white;
+    padding: 10px;
+    border-radius: 50px;
+    border:none;
+    background-size: cover;
+        background-position: center;
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+}
+input::placeholder{
+    color:white;
+}

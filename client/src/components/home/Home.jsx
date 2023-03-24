@@ -2,6 +2,7 @@ import React from 'react'
 import "./Home.css"
 import PostOnWall from './PostOnWall/PostOnWall'
 import Cookies from "universal-cookie";
+import { Link } from 'react-router-dom';
 
 
 export default function Home(props) {
@@ -27,7 +28,10 @@ export default function Home(props) {
   }
   if (token) {
     return (
-    <>
+      <>
+        <header>
+      <Link className='home-button' to="/home">Home</Link>
+    </header>
         <main>
         <div className='div-container'>
             {posts}

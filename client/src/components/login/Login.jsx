@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import {Link} from "react-router-dom"
 import Cookies from "universal-cookie";
+import "./Login.css"
 
 
 export default function Login() {
@@ -37,17 +39,26 @@ export default function Login() {
       })
       }
   return (
-    <div>
-      
-          <form onSubmit={login}>
-            <label>Username: 
-            <input type="text" name="username" value={user.username} onChange={changeHandler}/>
-          </label>
-              <label>Password: 
-            <input type="password" name="password" value={user.password} onChange={changeHandler}/>
-          </label>
+    <>
+      <div className='div-container'>
+        <div className='left-div'>
+          
+          <h2>Not a user yet?</h2>
+          <Link to="/register">Register</Link>
+        </div>
+        <div className='right-div'>
+          <h2>Login</h2>
+         <form className='login-form' onSubmit={login}>
+             
+            <input placeholder="Username..." type="text" name="username" value={user.username} onChange={changeHandler}/>
+          
+            <input placeholder="Password..." type="password" name="password" value={user.password} onChange={changeHandler}/>
+          
               <input type="submit" value="Login" />
-          </form>
-    </div>
+        </form> 
+        </div>
+          
+        </div>
+    </>
   )
 }
