@@ -18,6 +18,7 @@ export const loginUser = async (req, res) => {
               { expiresIn: "24h" }
             );
             res.status(200).send({
+              username: user.username,
               message: "Login Successful",
               email: user.email,
               token,

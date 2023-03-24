@@ -2,11 +2,11 @@ body{
     background-color: rgb(215, 228, 230);
 }
 .div-container{
-    margin-top:100px;
+    margin:100px auto 0;
     background-color: rgba(139, 255, 139, 0.384);
     display: flex;
     max-width:80%;
-    height:80vh;
+    height:770px;
     border-radius: 20px;
     box-shadow: 0 0 10px #68cfff7a;
 }

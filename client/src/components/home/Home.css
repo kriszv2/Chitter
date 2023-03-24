@@ -1,6 +1,13 @@
 .peeps-container{
     text-align: center;
-    align-items: center;
+    margin-top:80px;
+}
+.home-main{
+    text-align: left;
+    overflow: auto;
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+        background-size: cover;
+        background-position: center;
 }
 .logout-btn{
     background: transparent;
@@ -15,5 +22,55 @@
 }
 .logout-btn:hover{
     background-color: aliceblue;
+    
+}
+.headlines-article{
+    width: 55vw;
+    margin: 25px auto;
+    height: 20vh;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+        
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    
+    
+}
+.headlines-article>h6{
+    text-align: left;
+    padding:10px;
+    align-items: center;
+    
+    margin:0;
+}
+
+.home-main{
+    background-color: rgb(255, 255, 255);
+}
+.time-div{
+    float:right;
+    font-size: 0.8em;
+    margin:10px;
+}
+.message-p{
+    
+}
+.message-div{
+    text-align: center;
+    margin:10px auto;
+    border-radius:12px;
+    padding:10px;
+    width: 70%;
+    
+    background-color: rgb(240, 240, 240);
+    
+}
+.hr-div>hr{
+    width: 60%;
+}
+.hr-div{
+    text-align: -webkit-center;
     
 }

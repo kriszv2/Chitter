@@ -27,7 +27,10 @@ export default function Login() {
     axios.post("http://localhost:4000/login", user)
       
       .then(res => {
+        console.log(res.data)
         alert("Logged in")
+        
+        cookies.set("username",res.data.username,{path:"/"})
         cookies.set("TOKEN", res.data.token, {
           path: "/",
           

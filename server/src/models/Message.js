@@ -3,6 +3,10 @@ import { Schema } from "mongoose";
 
 const messageSchema = new Schema(
   {
+    username: {
+      type: String,
+      required: true,
+    },
     message: {
       type: String,
     },
