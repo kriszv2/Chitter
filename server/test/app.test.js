@@ -19,19 +19,28 @@ describe(`Testing requests on the database`, () => {
     }
     try {
       await Message.insertMany(testMessages);
-      console.log("Database populated with test messages!");
+      console.log(`Database populated with test messages`);
     } catch (error) {
-      console.log(`Error inserting test messages!`);
+      console.log(`Error inserting test messages`);
       throw new Error();
     }
   });
-  describe(`Group request tests for message`, () => {
-    it(`should return messages as an array(GET request)`, async () => {
+  describe("Group request tests for message", () => {
+    it("Should return messages as an array(GET request)", async () => {
       const res = await testServer.get(`/`).send();
 
       expect(res).to.have.status(200);
-      expect(res.body).to.be.an(`array`);
+      expect(res.body).to.be.an("array");
       expect(res.body.length).to.equal(testMessages.length);
+    });
+    it("Should not post message to database because of lacking username", async () => {
+      let message = {
+        message: "Hello test",
+      };
+      const res = await testServer.post("/").send(message);
+      expect(res).to.have.status(400);
+      expect(res).to.have.property(`error`);
+      expect(res.text).to.be.eql(`Adding new message failed`);
     });
   });
 });
