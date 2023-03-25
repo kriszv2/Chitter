@@ -120,6 +120,7 @@ describe(`Testing requests on the user database`, () => {
       expect(res).to.have.status(404);
       expect(res).to.have.property(`error`);
     });
+    //Register test account and make successful login request
     it("Should return successful login request", async () => {
       let userReg = {
         firstName: "test first name",
@@ -134,7 +135,8 @@ describe(`Testing requests on the user database`, () => {
       };
       await testServer.post("/register").send(userReg);
       const res = await testServer.post("/login").send(user);
-      console.log(res.body);
+
+      expect(res.body.message).to.be.eql("Login Successful");
     });
   });
 });

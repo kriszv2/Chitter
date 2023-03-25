@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import axios from "axios"
-import {Link} from "react-router-dom"
+import React, { useState } from 'react';
+import axios from "axios";
+import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
-import "./Login.css"
+import "./Login.css";
 
 
 export default function Login() {
@@ -57,11 +57,11 @@ export default function Login() {
           <h2>Login</h2>
          <form className='login-form' onSubmit={login}>
              
-            <input className='login-form-input' placeholder="Username..." type="text" name="username" value={user.username} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Username..." role="username" type="text" name="username" value={user.username} onChange={changeHandler}/>
           
-            <input className='login-form-input' placeholder="Password..." type="password" name="password" value={user.password} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Password..." role="password" type="password" name="password" value={user.password} onChange={changeHandler}/>
           
-              <input type="submit" value="Login" />
+              <input role="login-button" type="submit" value="Login" />
           </form> 
           
         </div>

@@ -1,7 +1,7 @@
-import React, {  useState } from 'react'
-import "./PostOnWall.css"
-import axios from "axios"
-import Cookies from 'universal-cookie'
+import React, { useState } from 'react';
+import "./PostOnWall.css";
+import axios from "axios";
+import Cookies from 'universal-cookie';
 
 export default function PostOnWall() {
   const [postContent, setPostContent] = useState(``)
