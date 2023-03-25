@@ -1,19 +1,25 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-const messageSchema = new Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-    },
-    message: {
-      type: String,
-    },
-  },
-  { timestamps: true }
-);
+let Message;
 
-const Message = mongoose.model("Message", messageSchema);
+if (mongoose.models.Message) {
+  Message = mongoose.model("Message");
+} else {
+  const messageSchema = new Schema(
+    {
+      username: {
+        type: String,
+        required: true,
+      },
+      message: {
+        type: String,
+      },
+    },
+    { timestamps: true }
+  );
+
+  Message = mongoose.model("Message", messageSchema);
+}
 
 export default Message;

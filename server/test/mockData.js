@@ -1,0 +1,75 @@
+const testUsers = {
+  users: [
+    {
+      firstName: "Lewie",
+      lastName: "Knappen",
+      email: "lknappen0@linkedin.com",
+      username: "lknappen0",
+      password: "naQLEyKy4Nb",
+    },
+    {
+      firstName: "Page",
+      lastName: "Domesday",
+      email: "pdomesday1@fda.gov",
+      username: "pdomesday1",
+      password: "Oiy8wr6aNuu",
+    },
+    {
+      firstName: "Selle",
+      lastName: "Phoebe",
+      email: "sphoebe2@noaa.gov",
+      username: "sphoebe2",
+      password: "XpaxBnBJ",
+    },
+    {
+      firstName: "Bendicty",
+      lastName: "Steinhammer",
+      email: "bsteinhammer3@yolasite.com",
+      username: "bsteinhammer3",
+      password: "SuaxFJFIa",
+    },
+    {
+      firstName: "Roland",
+      lastName: "Masic",
+      email: "rmasic4@unicef.org",
+      username: "rmasic4",
+      password: "Jo6MyNV0o",
+    },
+    {
+      firstName: "Tobe",
+      lastName: "Holdron",
+      email: "tholdron5@yahoo.co.jp",
+      username: "tholdron5",
+      password: "gq0swq26XS",
+    },
+    {
+      firstName: "Geoffrey",
+      lastName: "Parlour",
+      email: "gparlour6@nbcnews.com",
+      username: "gparlour6",
+      password: "Bk6xGy",
+    },
+    {
+      firstName: "Audra",
+      lastName: "Stanborough",
+      email: "astanborough7@ucsd.edu",
+      username: "astanborough7",
+      password: "R3FMJdO",
+    },
+    {
+      firstName: "Jacinda",
+      lastName: "Perllman",
+      email: "jperllman8@seesaa.net",
+      username: "jperllman8",
+      password: "tfTNopD5",
+    },
+    {
+      firstName: "Tamara",
+      lastName: "Whapple",
+      email: "twhapple9@about.com",
+      username: "twhapple9",
+      password: "xFYcmA75",
+    },
+  ],
+};
+export default testUsers;
