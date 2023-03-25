@@ -42,5 +42,16 @@ describe(`Testing requests on the database`, () => {
       expect(res).to.have.property(`error`);
       expect(res.text).to.be.eql(`Adding new message failed`);
     });
+    it("Should post message to database", async () => {
+      let message = {
+        message: "hello test",
+        username: "test username",
+      };
+      const res = await testServer.post("/").send(message);
+      expect(res).to.have.status(201);
+      expect(res).to.be.an("object");
+      expect(res.body.message).to.be.eql(message.message);
+      expect(res.body.username).to.be.eql(message.username);
+    });
   });
 });
