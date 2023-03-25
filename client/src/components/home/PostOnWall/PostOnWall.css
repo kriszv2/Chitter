@@ -8,6 +8,10 @@
     float:right;
     margin-bottom:10px;
 }
+.post-sub-btn:hover {
+    background-color:#3e30ff;
+    color:white;
+}
 .message-form{
     margin: 0 auto;
     display: flex;

@@ -2,7 +2,7 @@ import React from 'react'
 import "./Home.css"
 import PostOnWall from './PostOnWall/PostOnWall'
 import Cookies from "universal-cookie";
-import { Link } from 'react-router-dom';
+import {Link} from "react-router-dom"
 
 
 export default function Home(props) {
@@ -44,13 +44,14 @@ export default function Home(props) {
     window.location.href = "/";
   }
 
-  if (token) {
+  
     return (
       <>
 
         <main className='home-main'>
           
-          <button className='logout-btn' onClick={logout}>Logout</button>
+          {token && <button className='logout-btn' onClick={logout}>Logout</button>}
+          {!token && <Link className='home-login-btn' to={"/"}>Login</Link>}
           <div className='content'>
             <h1>Chitter</h1>
             <h1>Chitter</h1>
@@ -58,13 +59,13 @@ export default function Home(props) {
           
         <div className='peeps-container'>
             
-            <PostOnWall posts={posts} />
+            {token && <PostOnWall posts={posts} />}
             {posts}
               </div> 
         </main>
         
     </>
   )
-  }
+  
   
 }

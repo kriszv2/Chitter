@@ -103,3 +103,15 @@ h1{
 input::placeholder{
     color:white;
 }
+.home-page-btn{
+    text-decoration: none;
+    background: transparent;
+        border: 1px solid rgb(68, 173, 173);
+        color: rgb(68, 173, 173);
+        top:0;
+        border-top: none;
+        border-left: none;
+        position: fixed;
+        padding: 15px 30px;
+        font-size: 2em;
+}

@@ -44,7 +44,9 @@ export default function Login() {
       }
   return (
     <>
+      <Link className='home-page-btn' to="home">To Home Page</Link>
       <div className='div-container'>
+        
         <div className='left-div'>
           
           <h2>Not a user yet?</h2>
@@ -60,7 +62,8 @@ export default function Login() {
             <input className='login-form-input' placeholder="Password..." type="password" name="password" value={user.password} onChange={changeHandler}/>
           
               <input type="submit" value="Login" />
-        </form> 
+          </form> 
+          
         </div>
           
         </div>

@@ -74,3 +74,14 @@
     text-align: -webkit-center;
     
 }
+.home-login-btn{
+    text-decoration: none;
+    background: transparent;
+        border: 1px solid rgb(68, 173, 173);
+        color: rgb(68, 173, 173);
+        border-top: none;
+        border-left: none;
+        position: fixed;
+        padding: 15px 30px;
+        font-size: 2em;
+}
