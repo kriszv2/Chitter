@@ -53,15 +53,15 @@ export default function Login() {
           <Link to="/register">Register</Link>
         </div>
         <div className='right-div'>
-          <h1>Welcome to Chitter <img className='header-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png'/></h1>
+          <h1>Welcome to Chitter <img className='header-logo' alt="twitter-logo" src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png'/></h1>
           <h2>Login</h2>
          <form className='login-form' onSubmit={login}>
              
-            <input className='login-form-input' placeholder="Username..." role="username" type="text" name="username" value={user.username} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Username..."  type="text" name="username" value={user.username} onChange={changeHandler}/>
           
-            <input className='login-form-input' placeholder="Password..." role="password" type="password" name="password" value={user.password} onChange={changeHandler}/>
+            <input className='login-form-input' placeholder="Password..."  type="password" name="password" value={user.password} onChange={changeHandler}/>
           
-              <input role="login-button" type="submit" value="Login" />
+              <input type="submit" alt="login-button" value="Login" />
           </form> 
           
         </div>

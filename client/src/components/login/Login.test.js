@@ -12,7 +12,7 @@ describe("Login component", () => {
     );
     const usernameInput = screen.getByPlaceholderText("Username...");
     const passwordInput = screen.getByPlaceholderText("Password...");
-    const loginButton = screen.getByRole("login-button");
+    const loginButton = screen.getByAltText("login-button");
     expect(usernameInput).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
     expect(loginButton).toBeInTheDocument();

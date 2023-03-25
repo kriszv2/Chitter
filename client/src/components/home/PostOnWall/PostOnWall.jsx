@@ -24,12 +24,12 @@ window.location.reload();
   return (
     <div>
       
-      <form className='message-form' onSubmit={handleSubmit}>
+      <form className='message-form' id="postMessageForm" onSubmit={handleSubmit}>
         <h2 className='message-text'>Message</h2>
         
-        <textarea placeholder='Message...' type="text" className='message-box' name="messageBox" onChange={changeHandler} value={postContent} id="PostMessageBox" />
+        <textarea placeholder='Message...' type="text" className='message-box' name="messageBox"  onChange={changeHandler} value={postContent} id="PostMessageBox" />
         <div>
-<input className='post-sub-btn' type="submit" value="Post message" />
+        <input className='post-sub-btn' type="submit" id="postMessageButton" value="Post message" />
         </div>
               
       </form>
