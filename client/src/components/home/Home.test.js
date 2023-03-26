@@ -36,30 +36,4 @@ describe("Home component", () => {
     expect(username1).toBeInTheDocument();
     expect(username2).toBeInTheDocument();
   });
-
-  //   test("renders logout button when token exists", () => {
-  //     const cookies = { get: () => "TOKEN" };
-  //     Object.defineProperty(global, "document", { value: { cookie: cookies } });
-
-  //     render(
-  //       <BrowserRouter>
-  //         <Home posts={[]} />
-  //       </BrowserRouter>
-  //     );
-
-  //     const logoutButton = screen.getByText("Logout");
-
-  //     expect(logoutButton).toBeInTheDocument();
-  //   });
-
-  //   test("renders login button when token does not exist", () => {
-  //     const cookies = { get: () => undefined };
-  //     Object.defineProperty(global, "document", { value: { cookie: cookies } });
-
-  //     render(<Home posts={[]} />);
-
-  //     const loginButton = screen.getByText("Login");
-
-  //     expect(loginButton).toBeInTheDocument();
-  //   });
 });

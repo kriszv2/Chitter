@@ -30,7 +30,7 @@ export default function Register() {
       try {
         if (firstName && lastName && username && email && password) {
           
-          const res = await axios.post(`http://localhost:4000/register`, user);
+          const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/register`, user);
           alert(res.data.message);
           setUser({ firstName: ``, lastName: ``, username: ``, email: ``, password: `` });
           

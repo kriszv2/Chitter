@@ -24,7 +24,7 @@ export default function Login() {
 
     e.preventDefault();
 
-    axios.post("http://localhost:4000/login", user)
+    axios.post(`${process.env.REACT_APP_BASE_URL}/login`, user)
       
       .then(res => {
         console.log(res.data)
